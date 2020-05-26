@@ -1,2 +1,2 @@
 # Kotlin_Basic
-Practive Kotlin repository
+Practice Kotlin repository
