@@ -7,5 +7,16 @@ Kotlin에서 다양하게 함수를 정의하고 사용할 수 있다.
  */
 
 fun main(args : Array<String>) {
-    
+
+    funByNoParam()
+    funByParameter(31, " 숫자입니다.")
+}
+
+
+fun funByNoParam(){
+    println("funByNoParam")
+}
+
+fun funByParameter(i: Int, s: String){
+    println(i.toString() + s)
 }
