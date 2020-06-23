@@ -10,6 +10,14 @@ fun main(args : Array<String>) {
 
     funByNoParam()
     funByParameter(31, " 숫자입니다.")
+    println(funByReturn("Parameter"))
+    println(funByInLine(31, 10))
+
+    funcVar("Fuction Variable 1")
+    println(funcVarType("Function Variable 2"))
+
+    HigherFunc ({ println("Higher Funtion")})
+    HigherFunc (::funByNoParam)
 }
 
 
@@ -20,3 +28,17 @@ fun funByNoParam(){
 fun funByParameter(i: Int, s: String){
     println(i.toString() + s)
 }
+
+fun funByReturn(s: String): Any?{
+    return s
+}
+
+fun funByInLine(i: Int, i1: Int) = i * i1
+
+fun HigherFunc(f : () -> Unit){
+    f()
+}
+
+//함수를 정의한 변수
+val funcVar = {s : String -> println(s)}
+var funcVarType : (String) -> Any? = :: funByReturn
