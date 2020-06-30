@@ -6,3 +6,13 @@ Kotlin에서 Collections는 열거형 데이터를 관리하는데 필수적인 
 - 수정가능 List -> mutableListOf. 제너릭(<>)으로 데이터형을 반드시 선언. 각종 메소드(add, remove,...)
 - Map은 hashMapPf(키 to 값, ...) 형식
  */
+
+fun main(args : Array<String>) {
+    //읽기전용 - list. 데이터형을 마구 섞어도 된다.
+    val lst = listOf(1, "A", 12.00f, false, true)
+    for (i in 0 .. lst.size-1){
+        println(lst.get(i).toString())
+    }
+
+    println(">")
+}
