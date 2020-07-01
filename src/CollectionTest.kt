@@ -15,4 +15,31 @@ fun main(args : Array<String>) {
     }
 
     println(">")
+
+    //수정가능 - List. 데이터형을 미리 정해야 하는 듯.
+    var lstEditable = mutableListOf<String>()
+
+    //add 메소드로 추가
+    lstEditable.add("A")
+    lstEditable.add("B")
+    lstEditable.add("C")
+    lstEditable.add("D")
+
+    for (s in lstEditable){
+        println(s)
+    }
+
+    println(">")
+
+    //remove 메소드로 삭제
+    lstEditable.removeAt(0)
+    for (s in lstEditable){
+        println(s)
+    }
+
+    println(">")
+
+    //Map: java보다 불편한 듯.
+    var  m = hashMapOf("A" to 1, "B" to 2)
+    println(m["A"])
 }
