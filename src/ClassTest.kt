@@ -9,6 +9,11 @@ kotlin에서 class는 다음과 같다.
 fun main(args : Array<String>) {
     Test1().showInfo()
     Test1("PSW", 50).showInfo()
+
+    Test2("나다").showInfo()
+    Test2("PSW", 50).showInfo()
+
+    ChildClass("Hi").sayHello()
 }
 
 class Test1{
@@ -46,4 +51,13 @@ class Test2(name: String){
     }
 
     fun showInfo() = println("${sName} : ${nAge}")
+}
+
+//상속을 받으로면 open으로 정의
+open class ParentClass(msg: String){
+    var message = msg
+    fun sayHello() = println(message)
+}
+
+class ChildClass(m : String) : ParentClass(m){
 }
