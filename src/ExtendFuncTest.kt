@@ -19,6 +19,12 @@ fun main(args : Array<String>) {
     println("hi".myFunction("Hi", 10))
 
     //2. 파라메터로 확장함수 -> 객체에서 실행
+//    var obj = ani {
+//        crying()
+//        eat()
+//        nCount++
+//    }
+
     var obj = ani(3, {
         crying()
         eat()
@@ -30,8 +36,23 @@ fun main(args : Array<String>) {
     //3. 객체멤버 접근해보기(val?)
 
     //4. Android에서 흔하게 보게 될 코드(Interface와 함께)
+    obj.setOnEvent(3, "울어", {
+        nCount-> println("${nCount}번 울겠습니다.")
+        (1..nCount).map { crying() }
+    })
 
+    obj.setOnEvent(2, "먹어", {
+        nCount-> println("${nCount}번 먹겠습니다.")
+        (1..nCount).map { eat() }
+    })
 }
+//fun ani(n:Int, extFunc: Animal.() -> Unit) : Animal{
+//    var ani = Animal()
+//
+//    //확장함수가 실행되어야 한다. 매우 중요함.
+//    ani.extFunc()
+//    return ani
+//}
 
 fun ani(n:Int, extFunc: Animal.(Int) -> Unit) : Animal{
     var ani = Animal()
