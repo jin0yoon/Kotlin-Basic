@@ -19,6 +19,11 @@ fun main(args : Array<String>) {
     println("hi".myFunction("Hi", 10))
 
     //2. 파라메터로 확장함수 -> 객체에서 실행
+    var obj = ani(3, {
+        crying()
+        eat()
+        nCount+= it
+    })
 
     //   (apply와의 차이점은?)
 
@@ -28,7 +33,28 @@ fun main(args : Array<String>) {
 
 }
 
+fun ani(n:Int, extFunc: Animal.(Int) -> Unit) : Animal{
+    var ani = Animal()
 
+    //확장함수가 실행되어야 한다. 매우 중요함.
+    ani.extFunc(n)
+    return ani
+}
+
+class Animal{
+    open var nCount = 0
+    fun crying() = println("$this>> 아흥")
+    fun eat() = println("$this>> 우걱우걱")
+    open fun setOnEvent(nCount:Int, message:String, extFunc:Animal.(Int) -> Unit) : Animal{
+        when (message){
+            "울어" -> {extFunc(nCount)}
+            "먹어" -> {var n = if (nCount < 3) 3 else nCount; extFunc(n)}
+            else -> {
+                println("알 수 없는 메시지: ${message} 입니다.")}
+        }
+        return this
+    }
+}
 
 
 
