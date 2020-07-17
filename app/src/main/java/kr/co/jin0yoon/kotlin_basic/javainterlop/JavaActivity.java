@@ -11,5 +11,27 @@ java interlop
 
 package kr.co.jin0yoon.kotlin_basic.javainterlop;
 
-public class JavaActivity {
+import android.content.Context;
+import android.os.Bundle;
+import android.widget.Toast;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
+import kr.co.jin0yoon.kotlin_basic.R;
+
+public class JavaActivity extends AppCompatActivity {
+
+    String sMessage = "Hi, Java";
+
+    //kotlin에서 사용 가능
+    public void T (Context ctx, String sMessage){
+        Toast.makeText(ctx, sMessage, Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_java);
+    }
 }
