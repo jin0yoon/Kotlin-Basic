@@ -17,6 +17,16 @@ fun main(args: Array<String>) {
     empty.newProp = "반가워요"
     empty.newProp = "새로운 클래스"
     println(empty.newProp)
+
+    //mutable에 확장 properties 추가
+    //Queue와 흡사한 Log 처리
+    val mLog = mutableListOf<String>("success:100", "pass:203", "fail:001")
+    println(mLog)
+
+    mLog.firstHead = "success:100"
+    mLog.firstHead = "shutdown:-1"
+    mLog.forEach { println(">${it}"); }
+    println(mLog.firstHead)
 }
 
 var passwd:String = ""
@@ -41,4 +51,13 @@ var EmptyClass?.newProp:String
     }
     set(value) {
         this!!.message = value + "-" + this!!.message
+    }
+
+//MutableList에 firstHead properties 추가
+var MutableList<String>?.firstHead:String
+    get() {
+        return this!!.get(0)
+    }
+    set(value) {
+        this!!.add(0, value)
     }
