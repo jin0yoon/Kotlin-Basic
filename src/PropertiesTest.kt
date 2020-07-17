@@ -10,6 +10,13 @@ fun main(args: Array<String>) {
     //1. 변수를 가져오거나 대입할 때, 함수처럼 프로그래밍이 가능한 것
     passwd = "123456787657572313"
     println(passwd)
+
+    //내가 만든 클래스에 확장 properties 추가
+    val empty = EmptyClass()
+    empty.newProp = "안녕"
+    empty.newProp = "반가워요"
+    empty.newProp = "새로운 클래스"
+    println(empty.newProp)
 }
 
 var passwd:String = ""
@@ -22,4 +29,16 @@ var passwd:String = ""
     set(s:String) {
         println("\"${s}\"을 저장함")
         field = s
+    }
+
+class EmptyClass{
+    var message:String = ""
+}
+
+var EmptyClass?.newProp:String
+    get() {
+        return this!!.message
+    }
+    set(value) {
+        this!!.message = value + "-" + this!!.message
     }
