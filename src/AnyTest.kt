@@ -7,7 +7,7 @@ kotlin에서 Any형은 동적타입을 지원한다.
 
 fun main(args: Array<String>) {
     var everybody : Any
-    
+
     //1. 마지막 외에 회색인 이유는?
     everybody = 1111
     everybody = "문자열 테스트"
