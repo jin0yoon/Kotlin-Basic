@@ -25,5 +25,5 @@ fun main(args: Array<String>) {
 //    var name2 : String = null -> Null can not be a value of a non-null type String 이라는 오류 발생함
     var name2 : String? = null //이렇게 해줘야 오류가 발생하지 않음
 
-    
+
 }
