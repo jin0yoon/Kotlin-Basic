@@ -3,6 +3,7 @@ package kr.co.jin0yoon.kotlin_basic
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
+import kr.co.jin0yoon.kotlin_basic.step1.FirstTest
 
 /*
 kotlin을 시작하기 전에 알아야할 지식
